@@ -46,8 +46,6 @@ export function Topbar () {
           <PersonOutlinedIcon />
         </IconButton>
       </Box>
-
-      <IconButton />
     </Box>
   );
 }

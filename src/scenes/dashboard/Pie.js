@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function index () {
+export default function Pie () {
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1>Pie</h1>
     </div>
   );
 }

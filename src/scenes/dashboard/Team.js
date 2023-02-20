@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function index () {
+export function Team () {
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1>YTeam</h1>
     </div>
   );
 }

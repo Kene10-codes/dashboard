@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function index () {
+export function Dashboard () {
   return (
     <div>
       <h1>Dashboard</h1>
