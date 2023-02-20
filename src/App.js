@@ -4,6 +4,7 @@ import {CssBaseline, ThemeProvider} from '@mui/material';
 import {Topbar} from './scenes/global/Topbar';
 import {Dashboard} from './scenes/dashboard/Dashboard';
 import {Sidebar} from './scenes/global/Sidebar';
+import {Team} from './scenes/teams/Teams';
 
 function App () {
   const [theme, colorMode] = useMode ();
@@ -17,6 +18,7 @@ function App () {
             <Topbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/team" element={<Team />} />
             </Routes>
           </main>
         </div>
