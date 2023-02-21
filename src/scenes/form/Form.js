@@ -12,7 +12,7 @@ const initialValues = {
   address2: '',
 };
 
-// Phone Val idation
+// Phone Validation
 const phoneRegex = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
 // Schema Validation
@@ -40,7 +40,7 @@ export default function Form () {
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
-        validationSchema={userSchema}
+        validateSchema={userSchema}
       >
 
         {({
@@ -138,6 +138,11 @@ export default function Form () {
                 helperText={touched.address2 && errors.address2}
                 sx={{gridColumn: 'span 4'}}
               />
+            </Box>
+            <Box display="flex" justifyContent="end" mt="20px">
+              <Button type="submit" color="secondary" variant="contained">
+                Create New User
+              </Button>
             </Box>
           </form>
         )}
