@@ -19,7 +19,6 @@ import {
   ReceiptOutlined,
   TimelineOutlined,
 } from '@mui/icons-material';
-import {Calendar} from '@fullcalendar/core';
 
 function Item({title, to, icon, selected, setSelected}) {
   const theme = useTheme ();
