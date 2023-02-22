@@ -2,12 +2,11 @@ import {Routes, Route} from 'react-router-dom';
 import {ColorModeContext, useMode} from './context/theme';
 import {CssBaseline, ThemeProvider} from '@mui/material';
 import {Topbar} from './scenes/global/Topbar';
-import {Dashboard} from './scenes/dashboard/Dashboard';
+import {Dashboard} from './scenes/dashboard';
 import {Sidebar} from './scenes/global/Sidebar';
 import {Team} from './scenes/teams/Teams';
-import {Contacts} from './scenes/contacts/Contacts';
+import {Contacts} from './scenes/contacts';
 import {Invoices} from './scenes/invoices/Invoice';
-import Form from './scenes/form/Form';
 
 function App () {
   const [theme, colorMode] = useMode ();
