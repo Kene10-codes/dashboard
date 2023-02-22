@@ -60,10 +60,20 @@ export default function Calender () {
                   borderRadius: '2px',
                 }}
               >
-                <ListItemText>
-                  hi
-                </ListItemText>
-                hi
+                <ListItemText
+                  primary={event.title}
+                  secondary={
+                    <Typography>
+                      {
+                        (formDate (event.start), {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })
+                      }
+                    </Typography>
+                  }
+                />
               </ListItem>
             ))}
           </List>
