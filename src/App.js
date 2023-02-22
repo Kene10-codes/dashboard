@@ -7,6 +7,7 @@ import {Sidebar} from './scenes/global/Sidebar';
 import {Team} from './scenes/teams/Teams';
 import {Contacts} from './scenes/contacts';
 import {Invoices} from './scenes/invoices/Invoice';
+import Form from './scenes/form/Form';
 
 function App () {
   const [theme, colorMode] = useMode ();
