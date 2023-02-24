@@ -8,6 +8,8 @@ import {Team} from './scenes/teams/Teams';
 import {Contacts} from './scenes/contacts';
 import {Invoices} from './scenes/invoices/Invoice';
 import {Form} from './scenes/form';
+import {FAQ} from './scenes/faq';
+import {Calender} from './scenes/calender';
 
 function App () {
   const [theme, colorMode] = useMode ();
@@ -25,6 +27,8 @@ function App () {
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/profile" element={<Form />} />
+              <Route path="/calender" element={<Calender />} />
+              <Route path="/faq" element={<FAQ />} />
             </Routes>
           </main>
         </div>

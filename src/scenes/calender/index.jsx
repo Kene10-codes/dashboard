@@ -1,6 +1,11 @@
 import {useState} from 'react';
-import FullCalender, {formDate} from '@fullcalendar/react';
-import {daygrid, timegrid, list, interaction} from '@fullcalendar';
+import FullCalender from '@fullcalendar/react';
+import {formatDate} from '@fullcalendar/core';
+import daygrid from '@fullcalendar/daygrid';
+import timegrid from '@fullcalendar/timegrid';
+import list from '@fullcalendar/list';
+import interaction from '@fullcalendar/interaction';
+
 import {
   Box,
   List,
@@ -12,12 +17,14 @@ import {
 import Header from '../../components/Header';
 import {tokens} from '../../context/theme';
 
-export default function Calender () {
+export function Calender () {
   const theme = useTheme ();
   const colors = tokens (theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState ([]);
 
   function handleDateClick (selected) {
+    console.log (selected);
+
     const title = prompt ('Please enter a new title for your event');
     const calenderApi = selected.view.calender;
     calenderApi.unselect ();
@@ -49,7 +56,7 @@ export default function Calender () {
           p="15px"
           backgroundColor={colors.primary[400]}
         >
-          <Typography variant="h5">H</Typography>
+          <Typography variant="h5">Events</Typography>
           <List>
             {currentEvents.map (event => (
               <ListItem
@@ -65,7 +72,7 @@ export default function Calender () {
                   secondary={
                     <Typography>
                       {
-                        (formDate (event.start), {
+                        (formatDate (event.start), {
                           year: 'numeric',
                           month: 'short',
                           day: 'numeric',
@@ -79,8 +86,39 @@ export default function Calender () {
           </List>
         </Box>
 
+        {/* CALENDER */}
+        <Box flex="1 1 100%" ml="15px">
+          <FullCalender
+            height="75vh"
+            plugins={[daygrid, timegrid, interaction, list]}
+            headerToolbar={{
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
+            }}
+            initialView="dayGridMonth"
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+            select={handleDateClick}
+            eventClick={handleEventClick}
+            eventsSet={events => setCurrentEvents (events)}
+            // initialEvents={[
+            //   {
+            //     id: '1235',
+            //     title: 'Traveling to North',
+            //     date: '2022-0-14',
+            //   },
+            //   {
+            //     id: '4321',
+            //     title: 'All day event',
+            //     date: '2022-09-14',
+            //   },
+            // ]}
+          />
+        </Box>
       </Box>
-      h1
     </Box>
   );
 }
