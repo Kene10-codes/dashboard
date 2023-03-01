@@ -3,7 +3,7 @@ import {useTheme} from '@mui/material';
 import {tokens} from '../context/theme';
 import {ResponsiveBar} from '@nivo/bar';
 import {mockBarData as data} from '../data/mockData';
-import {color} from '@mui/system';
+
 
 export default function BarChart({isDashboard = false}) {
   const theme = useTheme ();
